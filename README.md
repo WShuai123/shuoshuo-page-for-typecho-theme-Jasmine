@@ -1,7 +1,7 @@
 # photo-page-for-typecho-theme-Jasmine
 适配Typecho主题[Jasmine](https://github.com/liaocp666/Jasmine)的说说页面模板。说说数据来自于Memos
 
-代码修改自:<https://immmmm.com/bb-by-memos/>
+代码修改自:<https://immmmm.com/>
 
 删除了部分功能：
 
