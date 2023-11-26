@@ -42,7 +42,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
 				    domId: '',//默认为 bber
 				  }
 				</script>
-				<script src="https://cdn.jsdelivr.net/gh/WShuai123/photo-page-for-typecho-theme-Jasmine@main/shuoshuo.js"></script>
+				<script src="https://cdn.jsdelivr.net/gh/WShuai123/shuoshuo-page-for-typecho-theme-Jasmine@main/shuoshuo.js"></script>
 
         <!-- 正文结束 -->
         </div>
