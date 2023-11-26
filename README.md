@@ -28,7 +28,7 @@ Code modified from:<https://immmmm.com/bb-by-memos/>
 
 效果图：
 
-![](https://cdn.jsdelivr.net/gh/WShuai123/photo-page-for-typecho-theme-Jasmine@main/pic/1.jpg)
+![](https://cdn.jsdelivr.net/gh/WShuai123/shuoshuo-page-for-typecho-theme-Jasmine@main/pic/1.jpg)
 
 参考和修改自：
 
