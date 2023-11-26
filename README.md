@@ -20,7 +20,7 @@ Code modified from:<https://immmmm.com/bb-by-memos/>
 
 ## 使用方法：
 
-1. 下载仓库中的php文件，保存到typecho**主题文件夹**的根目录下。比如`/typecho/usr/themes/jasmine`。
+1. [下载](https://github.com/WShuai123/shuoshuo-page-for-typecho-theme-Jasmine/releases/download/1.0/page-shuoshuo.zip)仓库中的php文件，保存到typecho**主题文件夹**的根目录下。比如`/typecho/usr/themes/jasmine`。
 
 2. 打开Typecho后台---管理----独立页面----新增----右侧自定义模板----说说页面
 
