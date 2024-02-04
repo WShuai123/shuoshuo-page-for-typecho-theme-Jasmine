@@ -299,7 +299,7 @@ let bbMemo = {
             let restype = resourceList[j].type.slice(0,5)
             let resexlink = resourceList[j].externalLink
             let resLink = resexlink ? resexlink : 
-                          memos+'o/r/'+resourceList[j].id+'/'+(resourceList[j].publicId || resourceList[j].filename)
+                          memos+'o/r/'+(resourceList[j].publicId || resourceList[j].name)
   
             if(restype == 'image'){
               imgUrl += `<figure class="gallery-thumbnail"><img class="img thumbnail-image" src="${resLink}"/></figure>`
