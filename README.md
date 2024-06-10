@@ -1,3 +1,8 @@
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
+新版本Memos的API发生了变化，所以代码进行了部分修改。如果安装的是较新的memos，请使用`shuoshuo_new.js`。
+</div>
+
 # photo-page-for-typecho-theme-Jasmine
 适配Typecho主题[Jasmine](https://github.com/liaocp666/Jasmine)的说说页面模板。说说数据来自于Memos
 
