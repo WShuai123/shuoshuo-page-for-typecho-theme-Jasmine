@@ -1,9 +1,9 @@
 
 新版本Memos的API发生了变化，所以代码进行了部分修改。如果安装的是较新的memos，请使用`shuoshuo_new.js`。
 
-<div style="background-color: #f0f0f0; padding: 10px;">
-    这是一个带有背景颜色的段落。
-</div>
+<span style="font-size: 20px;">
+    这是一个更大的字体。
+</span>
 
 # photo-page-for-typecho-theme-Jasmine
 适配Typecho主题[Jasmine](https://github.com/liaocp666/Jasmine)的说说页面模板。说说数据来自于Memos
