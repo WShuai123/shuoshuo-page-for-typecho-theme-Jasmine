@@ -18,6 +18,8 @@
 
 原作者教程见：<https://immmmm.com/bb-by-memos/>
 
+> 新版本Memos的API发生了变化，所以代码进行了部分修改。如果安装的是较新的memos，请使用`shuoshuo_new.js`。
+
 ## 使用方法：
 
 1. [下载](https://github.com/WShuai123/shuoshuo-page-for-typecho-theme-Jasmine/releases/download/1.0/page-shuoshuo.zip)仓库中的php文件，保存到typecho**主题文件夹**的根目录下。比如`/typecho/usr/themes/jasmine`。
