@@ -132,19 +132,15 @@ let bbDom = document.querySelector(bbMemo.domId);
 let load = '<div class="bb-load"><button class="load-btn button-load">加载中……</button></div>'
 let loading = `<div class="loader"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>`
 let nextPageToken = "";
-// if (bbDom) {
-//   fetchStatus()
-// }
 
-fetchStatus()
+// 判断是否存在id为bber的div块。
+if (bbDom) {
+  fetchStatus()
+}
 
 async function fetchStatus() {
-  // let statusUrl = memos + "api/v1/ping";
-  // let response = await fetch(statusUrl);
-  // if (response.ok) {
-  //   apiV1 = 'v1/'
-  // }
   let memoOne = getQueryVariable("memo") || ''
+  console.log("memoOne:", memoOne)
   if (memoOne) {
     getMemoOne(memoOne)
   } else {
@@ -196,8 +192,6 @@ function getFirstList() {
       document.querySelector("button.button-load").remove()
       return
     }
-    mePage++
-    offset = limit * (mePage - 1)
     getNextList()
   });
 }
@@ -210,8 +204,7 @@ function getNextList() {
     nextPageToken = resdata.nextPageToken
     nextDom = resdata.memos
     nextLength = resdata.memos.length
-    mePage++
-    offset = limit * (mePage - 1)
+
     if (nextLength < 1) { //返回数据条数为 0 ，隐藏
       document.querySelector("button.button-load").remove()
       return
@@ -233,7 +226,6 @@ function meNums() {
 }
 // 插入 html 
 async function updateHTMl(data) {
-  //console.log(data)
   let result = "", resultAll = "";
   const TAG_REG = /#([^#\s!.,;:?"'()]+)(?= )/g ///#([^/\s#]+?) /g
     , IMG_REG = /\!\[(.*?)\]\((.*?)\)/g
@@ -275,10 +267,11 @@ async function updateHTMl(data) {
 
     //标签
     let tagArr = bbCont.match(TAG_REG);
+    console.log("tagArr",tagArr)
     let bbContTag = '';
     if (tagArr) {
       bbContTag = tagArr.map(t => {
-        return `<span class='tag-span' onclick='getTagNow(this)'>${t}</span> `;
+        return `<span class='tag-span'>${t}</span> `;
       }).join('');
       bbContREG = bbContTag + bbContREG.trim()
     }
@@ -304,14 +297,15 @@ async function updateHTMl(data) {
     }
 
     //解析内置资源文件
-    if (data[i].resourceList && data[i].resourceList.length > 0) {
-      let resourceList = data[i].resourceList;
+    if (data[i].resources && data[i].resources.length > 0) {
+      let resourceList = data[i].resources;
+      console.log(resourceList)
       let imgUrl = '', resUrl = '', resImgLength = 0;
       for (let j = 0; j < resourceList.length; j++) {
         let restype = resourceList[j].type.slice(0, 5)
         let resexlink = resourceList[j].externalLink
         let resLink = resexlink ? resexlink :
-          memos + 'o/r/' + (resourceList[j].publicId || resourceList[j].name)
+          memos + 'file/' + resourceList[j].name + '/' + resourceList[j].filename
 
         if (restype == 'image') {
           imgUrl += `<figure class="gallery-thumbnail"><img class="img thumbnail-image" src="${resLink}"/></figure>`
@@ -364,11 +358,13 @@ async function updateHTMl(data) {
   bbDom.insertAdjacentHTML('beforeend', resultAll);
   if (document.querySelector('button.button-load')) document.querySelector('button.button-load').textContent = '加载更多';
 
+  //图片灯箱
+  window.ViewImage && ViewImage.init('.bb-cont img')
   //相对时间
   window.Lately && Lately.init({ target: '.datatime' });
 }
 
-// Fetch NeoDB
+// 豆瓣
 async function fetchNeoDB(url) {
   let urlNow = "https://api-neodb.immmmm.com/?url=" + url
   let response = await fetch(urlNow);
