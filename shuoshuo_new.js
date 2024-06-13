@@ -140,7 +140,6 @@ if (bbDom) {
 
 async function fetchStatus() {
   let memoOne = getQueryVariable("memo") || ''
-  console.log("memoOne:", memoOne)
   if (memoOne) {
     getMemoOne(memoOne)
   } else {
@@ -218,7 +217,6 @@ function meNums() {
   fetch(bbUrl).then(res => res.json()).then(resdata => {
     if (resdata) {
       let nums = resdata.memos.length
-      console.log("nums:", nums)
       let allnums = `<div id="bb-footer"><p class="bb-allnums">共 ${nums} 条 </p></div>`
       bbLoad.insertAdjacentHTML('afterend', allnums);
     }
@@ -267,7 +265,6 @@ async function updateHTMl(data) {
 
     //标签
     let tagArr = bbCont.match(TAG_REG);
-    console.log("tagArr",tagArr)
     let bbContTag = '';
     if (tagArr) {
       bbContTag = tagArr.map(t => {
@@ -299,7 +296,6 @@ async function updateHTMl(data) {
     //解析内置资源文件
     if (data[i].resources && data[i].resources.length > 0) {
       let resourceList = data[i].resources;
-      console.log(resourceList)
       let imgUrl = '', resUrl = '', resImgLength = 0;
       for (let j = 0; j < resourceList.length; j++) {
         let restype = resourceList[j].type.slice(0, 5)
