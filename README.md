@@ -1,9 +1,9 @@
 
-## 新版本Memos的API发生了变化，所以代码进行了部分修改。如果安装的是较新的memos，请使用`shuoshuo_new.js`。page-shuoshuo.php中的js链接也要更新为新的链接
+## 新版本（大概是0.22.2）Memos的API发生了变化，所以代码进行了部分修改。如果安装的是较新的memos，请使用`shuoshuo_new.js`。page-shuoshuo.php中的js链接也要更新为新的链接
 
 在某个版本后Memos的api发生了变化。
 
-建议不要升级memos。
+建议将Memos版本锁定在0.22.2
 
 # photo-page-for-typecho-theme-Jasmine
 适配Typecho主题[Jasmine](https://github.com/liaocp666/Jasmine)的说说页面模板。说说数据来自于Memos
